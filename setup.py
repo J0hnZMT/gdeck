@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(name='gdeck',
       version='0.1',
-      description='Store parent paths, File names, size and hashes of the selected dir to a csv file.',
+      description='Generates a deck of 52 cards',
       url='https://github.com/J0hnZMT/gdeck',
       author='Johnzel Tuddao',
       author_email='tuddaojohnzel@gmail.com',
