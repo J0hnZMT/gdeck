@@ -1,0 +1,24 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "e0b2109214b2c220d3c9be36b86a0af8558acfa71c2cb4e1512e0a11b11a69c0"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.7"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "gdeck": {
+            "path": "."
+        }
+    },
+    "develop": {}
+}
