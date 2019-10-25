@@ -6,21 +6,31 @@ import random
 
 
 class Card(object):
+    suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades']
+
     # initialize the rank and suit of a card
     def __init__(self, rank, suit):
         self.rank = rank
         self.suit = suit
 
-    # Implementing build in methods so that you can print a card object
-    def __str__(self):
-        return self.show()
-
-    def __repr__(self):
-        return self.show()
-
     # print an instance of card
-    def show(self):
-        return "{} of {}".format(self.suit, self.rank)
+    def __repr__(self):
+        if self.rank == 1:
+            rank = "Ace"
+        elif self.rank == 11:
+            rank = "Jack"
+        elif self.rank == 12:
+            rank = "Queen"
+        elif self.rank == 13:
+            rank = "King"
+        else:
+            rank = self.rank
+        if self.suit == Card.suits[0] or self.suit == Card.suits[1] or \
+                self.suit == Card.suits[2] or self.suit == Card.suits[3]:
+            suit = self.suit
+        else:
+            raise ValueError("value must be any of the suits within a deck of cards")
+        return "{} of {}".format(rank, suit)
 
 
 class Deck(object):
@@ -31,12 +41,8 @@ class Deck(object):
     # initialize the deck
     def __init__(self):
         self.cards = []
-        self.build()
+        self.generate()
         self.index = 0
-
-    # make the class iterator
-    def __iter__(self):
-        return self
 
     def __next__(self):
         if self.index >= len(self.cards):
@@ -52,34 +58,30 @@ class Deck(object):
         return self.cards[index]
 
     # Display all cards in the deck
-    def show(self):
-        for get_card in self.cards:
-            print(get_card.show())
-
-    def __str__(self):
-        return self.show()
-
-    def __repr__(self):
-        return self.show()
+    def show(self, index=None):
+        if index is None:
+            print(self.cards)
+        else:
+            print(self.cards[0:index])
 
     # Generate 52 cards in deck
-    def build(self):
+    def generate(self):
         self.cards = []
         for suit in Deck.suits:
             for rank in Deck.ranks:
-                self.cards.append(Card(suit, rank))
+                self.cards.append(Card(rank, suit))
 
     # Shuffle the deck
-    def shuffle(self, num=1):
-        for _ in range(num):
-            # build in shuffle method
-            random.shuffle(self.cards)
+    def shuffle(self):
+        random.shuffle(self.cards)
 
     # draw random card in the deck
-    def draw(self):
-        return random.choice(self.cards)
+    def choice(self, index=None):
+        if index is None:
+            return random.choice(self.cards)
+        else:
+            return random.choices(self.cards, k=index)
 
     # draw the top card of the deck
     def draw_top(self):
         return self.cards[0]
-
