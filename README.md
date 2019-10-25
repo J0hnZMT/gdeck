@@ -77,6 +77,7 @@ deck.draw_top()#this will draw the first card on the deck
 #you can also draw any random card on the deck
 deck.choice()#this will draw 1 any random card
 deck.choice(5)#this will draw 5 any random card
+
 #you can also use slicing to get a set of cards from the deck
 deck[0:52]#this will display all the cards on the deck
 deck[0:10]#this will display only the first 10 cards on the deck
