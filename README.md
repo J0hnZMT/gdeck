@@ -84,7 +84,7 @@ deck.choice(5)#this will draw 5 any random card
 deck[0:52]#this will display all the cards on the deck
 deck[0:10]#this will display only the first 10 cards on the deck
 ```
-#####the Deck is also an iterator so you can use it on next() function or in random() function
+--the Deck is also an iterator so you can use it on next() function or in random() function
 
 ## Author
 **Johnzel Tuddao** - *Initial work* - [J0hnZMT](https://github.com/J0hnZMT)
