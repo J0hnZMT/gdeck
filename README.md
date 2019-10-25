@@ -47,7 +47,8 @@ python -m pytest --cov=gdeck
 ## To Use
 
 import the gdeck module then instantiate the Card or Deck class to use
-####Example:
+
+Example:
 ```
 import gdeck
 
