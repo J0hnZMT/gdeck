@@ -51,32 +51,28 @@ import the gdeck module then instantiate the Card or Deck class to use
 ```
 import gdeck
 
-card = gdeck.Card(rank, suit)
-deck = gdeck.Deck()
-
-```
-
-### To use the Card
- ```
+# To use the Card
 rank = 5
 suit = Hearts
 
 card = gdeck.Card(rank, suit)
+#You can only use the four suits in the deck of cards 'Hearts', 'Clubs', 'Diamonds' or 'Spades'
 
-```
-You can only use the four suits in the deck of cards 'Hearts', 'Clubs', 'Diamonds' or 'Spades'.Card
-
-###To use the Deck
- ```
+#To use the Deck
 deck = gdeck.Deck()
+
 # to display the 52 cards in the deck
 deck.show()
+
 # to display only n number of cards
 deck.show(5)#this will print only 5 sets of cards
+
 #you can also shuffle the deck
 deck.shuffle()#this will only shuffle the deck but will not display the cards
+
 #you can also draw the first card on the deck
 deck.draw_top()#this will draw the first card on the deck
+
 #you can also draw any random card on the deck
 deck.choice()#this will draw 1 any random card
 deck.choice(5)#this will draw 5 any random card
